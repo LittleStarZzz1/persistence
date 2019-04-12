@@ -6,10 +6,10 @@ int main(){
 	while (num != 0){
 		if (num % 2 == 1){
 			++count;
-			num = num >> 1;
 		}
+		num = num >> 1;
 	}
-	printf("%d\n",count);
+	printf("%d\n", count);
 	system("pause");
 	return 0;
 }
