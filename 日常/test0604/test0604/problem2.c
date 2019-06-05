@@ -20,7 +20,7 @@ int my_strncmp(const char* str1, const char* str2, unsigned int n){
 		return 0;
 	}
 }
-int main(){
+int main2(){
 	char str1[] = "abcdef";
 	char str2[] = "abcdfr";
 	int ret;

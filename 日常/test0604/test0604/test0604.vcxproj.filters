@@ -21,5 +21,26 @@
     <ClCompile Include="problem2.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="problem3.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="problem4.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="problem5.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="problem6.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="problem7.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="problem8.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="problem9.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
