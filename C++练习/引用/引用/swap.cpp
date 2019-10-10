@@ -9,7 +9,7 @@ void Swap(int & a, int & b)
 	b = tmp;
 }
 
-int main()
+int main4()
 {
 	int a = 10;
 	int b = 20;
