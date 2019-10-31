@@ -1,0 +1,46 @@
+配接器:
+
+stack 
+queue
+priority_queue
+
+stack:
+
+默认适配器: deque
+
+可选适配器: vector list
+
+push  =>   push_back
+pop   =>   pop_back
+top    =>   back
+
+默认适配器: deque
+
+可选适配器: list
+
+push  =>   push_back
+pop   =>   pop_front
+back  =>   back
+front  => front
+
+priority_queue:
+
+#include <functional>	(仿函数头文件)
+默认适配器: vector
+默认比较方式: less (仿函数)
+
+可选适配器: deque
+可选比较方式: greater
+
+#include <algorithm>	(算法头文件)
+构造   => make_heap
+push  => push_back +push_heap
+pop   => pop_front +pop_heap
+top    => front
+
+仿函数: 可以当成函数使用的类(在类中重载()), 方法是重载函数调用运算符("()")
+
+
+*为什么选择deque作为queue和stack的底层:
+
+因为deque在两端进行增长和删除的速度是最快的.
