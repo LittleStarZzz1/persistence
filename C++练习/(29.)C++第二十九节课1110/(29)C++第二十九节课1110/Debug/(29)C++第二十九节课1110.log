@@ -1,0 +1,17 @@
+﻿生成启动时间为 2019/11/11 20:38:26。
+     1>项目“D:\Program Files (x86)\C程序及项目\c++程序\C++小项目开发\(29)C++第二十九节课1110\(29)C++第二十九节课1110\(29)C++第二十九节课1110.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\Program Files (x86)\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt "main1-2.cpp" main1.cpp
+         main1.cpp
+         main1-2.cpp
+         正在生成代码...
+       Link:
+         D:\Program Files (x86)\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Program Files (x86)\C程序及项目\c++程序\C++小项目开发\(29)C++第二十九节课1110\Debug\(29)C++第二十九节课1110.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Program Files (x86)\C程序及项目\c++程序\C++小项目开发\(29)C++第二十九节课1110\Debug\(29)C++第二十九节课1110.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Program Files (x86)\C程序及项目\c++程序\C++小项目开发\(29)C++第二十九节课1110\Debug\(29)C++第二十九节课1110.lib" /MACHINE:X86 "Debug\main1-1.obj"
+         "Debug\main1-2.obj"
+         Debug\main1.obj
+         (29)C++第二十九节课1110.vcxproj -> D:\Program Files (x86)\C程序及项目\c++程序\C++小项目开发\(29)C++第二十九节课1110\Debug\(29)C++第二十九节课1110.exe
+     1>已完成生成项目“D:\Program Files (x86)\C程序及项目\c++程序\C++小项目开发\(29)C++第二十九节课1110\(29)C++第二十九节课1110\(29)C++第二十九节课1110.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:01.43
