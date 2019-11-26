@@ -1,0 +1,12 @@
+﻿生成启动时间为 2019/10/7 16:31:54。
+     1>项目“D:\Program Files (x86)\C程序及项目\c++程序\C++日常练习\名字修饰\名字修饰\名字修饰.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\Program Files (x86)\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main2.cpp
+         main2.cpp
+     1>d:\program files (x86)\c程序及项目\c++程序\c++日常练习\名字修饰\名字修饰\main2.cpp(11): error C2733: “func”: 不允许重载函数的第二个 C 链接
+                 d:\program files (x86)\c程序及项目\c++程序\c++日常练习\名字修饰\名字修饰\main2.cpp(6) : 参见“func”的声明
+     1>已完成生成项目“D:\Program Files (x86)\C程序及项目\c++程序\C++日常练习\名字修饰\名字修饰\名字修饰.vcxproj”(Build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.38
