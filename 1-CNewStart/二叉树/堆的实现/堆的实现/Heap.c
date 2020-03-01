@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "Heap.h"
 
 //小堆
@@ -30,6 +31,30 @@ void AdjustDown(HpDataType * a, size_t size, int root)
 	}
 }
 
+//向上调整算法
+void AdjustUp(int * a, int child)
+{
+	int parent = (child - 1) / 2;
+	//while (parent >= 0) //判断条件不对, 没有起到作用, parent 不会小于0, 借助 break 跳出
+	while (child > 0)
+	{
+
+		if (a[child] < a[parent])
+		{
+			int tmp = a[child];
+			a[child] = a[parent];
+			a[parent] = tmp;
+
+			child = parent;
+			parent = (child - 1) / 2;
+		}
+		else
+		{
+			break;
+		}
+	}
+}
+
 Heap * HeapCreate(HpDataType * a, size_t size)
 {
 	Heap * hp = (Heap*)malloc(sizeof(Heap));
@@ -48,9 +73,54 @@ Heap * HeapCreate(HpDataType * a, size_t size)
 	return hp;
 }
 
+//堆排序
+void HeapSort(int * a, size_t size)
+{
+	//将数组调整成为小堆
+	for (int i = (size - 1) / 2; i >= 0; --i)
+	{
+		AdjustDown(a, size, i);
+	}
+
+	printf("排序前 : \n");
+	for (int i = 0; i < size; ++i)
+	{
+		printf("%d ", a[i]);
+	}
+	printf("\n");
+
+	int end = size - 1;
+
+	while (end > 0)
+	{
+		int tmp = a[end];
+		a[end] = a[0];
+		a[0] = tmp;
+
+		AdjustDown(a, end, 0);
+		end--;
+	}
+
+	printf("排序后 : \n");
+	for (int i = 0; i < size; ++i)
+	{
+		printf("%d ", a[i]);
+	}
+	printf("\n");
+	
+}
+
+//堆排序的测试
+void testHeapSort()
+{
+	int a[10] = { 15, 18, 19, 37, 28, 27, 25, 34, 49, 65 };
+
+	HeapSort(a, 10);
+}
+
 int main()
 {
-
+	testHeapSort();
 
 	system("pause");
 	return 0;
