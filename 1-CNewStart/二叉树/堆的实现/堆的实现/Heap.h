@@ -10,7 +10,7 @@ typedef struct Heap
 }Heap;
 
 //建堆
-Heap * HeapCreate(HpDataType * a, size_t n);
+Heap * HeapCreate(HpDataType * a, size_t size);
 //插入
 void HeapPush(Heap * hp, HpDataType x);
 //删除
@@ -19,4 +19,7 @@ void HeapPop(Heap * hp);
 HpDataType HeapTop(Heap * hp);
 
 //向下调整算法
-void AdjustDown(Heap * a, size_t n, int root);
+void AdjustDown(HpDataType * a, size_t size, int root);
+
+//堆排序
+void HeapSort(int * a, size_t size);
