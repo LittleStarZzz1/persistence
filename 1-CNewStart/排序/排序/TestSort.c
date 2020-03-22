@@ -8,8 +8,11 @@ int main()
 	int a_len = sizeof(a) / sizeof(int);
 
 	//InsertSort(a, a_len);
-	ShellSort(a, a_len);
-
+	//ShellSort(a, a_len);
+	//SelectSort(a, a_len);
+	//HeapSort(a, a_len);
+	//BubbleSort(a, a_len);
+	QuickSort(a, a_len);
 
 
 	Print(a, a_len);
