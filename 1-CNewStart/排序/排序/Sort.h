@@ -66,7 +66,7 @@ void InsertSort(int* a, int n)
 //希尔排序
 void ShellSort(int* a, int n)
 {
-	for (int gap = n / 2; gap > 0; gap /= 2)
+	for (int gap = n / 3 + 1; gap > 0; gap /= 2)
 	{
 		for (int i = 0; i < n - gap; ++i)
 		{
@@ -193,8 +193,69 @@ void BubbleSort(int *a, int n)
 	}
 }
 
+//当数组有序时,快排会变成最坏的情况,为了优化快排,采用三数取中
+int GetMidIndex(int *a, int begin, int end)//三数取中
+{
+	int mid = (begin + end) >> 1;//即(begin + end) / 2,移位效率较高
+	if (a[begin] < a[mid])
+	{
+		if (a[mid] < a[end])
+		{
+			return mid;
+		}
+		else // a[mid] > a[end]
+		{
+			if (a[begin] < a[end])
+			{
+				return end;
+			}
+			else
+			{
+				return begin;
+			}
+		}
+	}
+	else // a[begin] > a[mid]
+	{
+		if (a[mid] > a[end])
+		{
+			return mid;
+		}
+		else
+		{
+			if (a[begin] > a[end])
+			{
+				return end;
+			}
+			else
+			{
+				return begin;
+			}
+		}
+	}
+}
 
-//挖坑法
+//1. 左右指针法/hoare法
+int HoareMethod(int *a, int begin, int end)
+{
+	int key = a[end];
+	int keyindex = end;
+	while (begin < end)
+	{
+		while (begin < end && a[begin] <= key)
+		{
+			++begin;
+		}
+		while (begin < end && a[end] >= key)
+		{
+			--end;
+		}
+		Swap(&a[begin], &a[end]);
+	}
+	Swap(&a[begin], &a[keyindex]);
+	return begin;
+}
+//2. 挖坑法
 int DigPitMethod(int *a, int begin, int end)
 {
 	int key = a[end];
@@ -220,9 +281,11 @@ int DigPitMethod(int *a, int begin, int end)
 	a[pit] = key;
 	return pit;
 }
-//前后指针法
-int PrevPostPointer(int *a, int begin, int end)
+//3. 前后指针法        使用三数取中优化快排
+int PrevCurPointer(int *a, int begin, int end)
 {
+	int keyindex = GetMidIndex(a, begin, end);
+	Swap(&a[keyindex], &a[end]);
 	int key = a[end];
 	int cur = begin;
 	int prev = begin - 1;
@@ -245,9 +308,16 @@ void _QuickSort(int *a, int begin, int end)
 	{
 		return;
 	}
-	int pitindex = DigPitMethod(a, begin, end);
-	_QuickSort(a, 0, pitindex - 1);
-	_QuickSort(a, pitindex + 1, end);
+	//int keyindex = DigPitMethod(a, begin, end);
+	//int keyindex = HoareMethod(a, begin, end);
+	int keyindex = PrevCurPointer(a, begin, end);
+	_QuickSort(a, begin, keyindex - 1);
+	_QuickSort(a, keyindex + 1, end);
+}
+//快排非递归, 借助栈实现
+void _QuickSortNoR(int *a, int begin, int end)
+{
+
 }
 //快速排序
 void QuickSort(int *a, int n)
