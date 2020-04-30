@@ -7,7 +7,7 @@ public:
 
 	int GetMonthDay(int year, int month)
 	{
-		static int MonthDay[13] = { 0, 31, 30, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+		static int MonthDay[13] = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 		if (month == 2 && ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0))
 		{
 			return 29;
@@ -67,7 +67,7 @@ istream& operator >>(istream& in, Date& d)
 	return in;
 }
 
-int main()
+int main1()
 {
 	Date d1;
 	Date d2;
